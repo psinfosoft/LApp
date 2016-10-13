@@ -1,0 +1,121 @@
+﻿@model  LegalApp.Entity.EntityLawyer
+
+@{
+    ViewBag.Title = "Lawyer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lawyer</h2>
+<div class="row">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @using (Html.BeginForm("AddUpdate", "Lawyer", FormMethod.Post, new { @action = "", name = "LawyerForm", id = "LawyerForm" }))
+            {
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.LawyerID);
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">@(Model.LawyerID == 0 ? "Add Lawyer" : "Update Layer")</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="form-control-label">Name</label>
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", MaxLength = 200 })
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Email</label>
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", MaxLength = 200 })
+                        @Html.ValidationMessageFor(model => model.Email)
+                        <span id="spEmailExists" style="display:none">Email already exists.</span>
+                    </div>
+                    @if (Model.LawyerID == 0)
+                {
+                        <div class="form-group">
+                            <label class="form-control-label">Password</label>
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control", MaxLength = 50 })
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </div>
+                    }
+                    else
+                    {
+                        @Html.HiddenFor(model => model.Password);
+                }
+                    <div class="form-group">
+                        <label class="form-control-label">Photo</label>
+                        @*@Html.Uploa(model => model.PhotoURL, new { @class = "form-control", MaxLength = 200 })*@
+                        @*@Html.ValidationMessageFor(model => model.Email)*@
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">State</label>
+                        @Html.DropDownListFor(model => model.StateID, null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.StateID)
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">City</label>
+                        @Html.DropDownListFor(model => model.DistrictID, null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.DistrictID)
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Address</label>
+                        @Html.TextAreaFor(model => model.Address, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Address)
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Alternate Email</label>
+                        @Html.TextBoxFor(model => model.AlternateEmail, new { @class = "form-control", MaxLength = 200 })
+                        @*@Html.ValidationMessageFor(model => model.AlternateEmail)*@
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Phone No.</label>
+                        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", MaxLength = 50 })
+                        @Html.ValidationMessageFor(model => model.Phone)
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Alternate Phone No.</label>
+                        @Html.TextBoxFor(model => model.AlternatePhone, new { @class = "form-control", MaxLength = 50 })
+                        @*@Html.ValidationMessageFor(model => model.AlternatePhone)*@
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Sex</label>
+                        @Html.DropDownListFor(model => model.Sex, null, new { @class = "form-control", MaxLength = 50 })
+                        @Html.ValidationMessageFor(model => model.Sex)
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Practicing Since</label>
+                        @Html.TextBoxFor(model => model.PracticingSince, new { @class = "form-control", MaxLength = 500 })
+                        @Html.ValidationMessageFor(model => model.PracticingSince)
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Practicing Areas</label>
+                        @Html.TextBoxFor(model => model.PracticingAreas, new { @class = "form-control", MaxLength = 500 })
+                        @Html.ValidationMessageFor(model => model.PracticingAreas)
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Courts</label>
+                        @Html.TextBoxFor(model => model.Courts, new { @class = "form-control", MaxLength = 500 })
+                        @Html.ValidationMessageFor(model => model.Courts)
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">About</label>
+                        @Html.TextBoxFor(model => model.About, new { @class = "form-control", MaxLength = 4000 })
+                        @Html.ValidationMessageFor(model => model.About)
+                    </div>
+                    <div class="form-group">
+                        <label class=""form-control-label">Active</label>
+                        @Html.CheckBoxFor(m => m.IsActive.Value)
+                    </div>
+                    @*<h4>Notifications</h4>
+                    <br />*@
+                   
+                    
+                </div>
+                <div class="modal-footer">
+                    <a href='@Url.Action("Index", "UserManagement")' data-dismiss="modal" class="btn btn-default" title="Cancel">Cancel</a>
+                    <button id="btnSubmitUMP" class="btn btn-primary" title='@(Model.LawyerID == 0 ? "Save" : "Update")'>@(Model.LawyerID == 0 ? "Save" : "Update")</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html lang="en" class="@ViewBag.BodyClass">
+<head>
+    <meta charset="utf-8">
+    <title>Legal App</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="@Url.Content("~/bundles/Js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/bundles/Css")" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Font Awesome -->
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <!-- ionicons -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Content/Css/verify.css" />
+
+    <script type="text/javascript">
+        function notify(message, type) {
+            var xoffSet;
+            var alignment;
+            if (message.length >= 60) {
+                xoffSet = 350;
+                alignment = "left";
+            }
+            else {
+                xoffSet = 0;
+                alignment = "center";
+            }
+            $.growl({
+                message: message
+            }, {
+                type: type,
+                allow_dismiss: false,
+                label: 'Cancel',
+                className: 'btn-xs btn-inverse',
+                placement: {
+                    from: 'bottom',
+                    align: alignment
+                },
+                offset: {
+                    x: xoffSet,
+                    y: 50
+                },
+                delay: 6000,
+                animate: {
+                    enter: 'animated bounceIn',
+                    exit: 'animated bounceOut'
+                }
+            });
+        };
+    </script>
+</head>
+<body class="@ViewBag.BodyClass">
+    <!-- Global Navigation [START] -->
+    <nav id="global-nav" class="navbar navbar-default navbar-static-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="@Url.Action("Index","Dashboard")" class="navbar-brand">Legal App</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Global Navigation [END] -->
+
+    @RenderBody()
+    @RenderSection("Scripts", required: false)
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"><a>Legal App</a></p>
+        </div>
+    </footer>
+</body>
+</html>

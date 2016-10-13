@@ -1,0 +1,212 @@
+﻿/* Main */
+body, html {
+    background-color: #ebebeb;
+    color: #484848;
+}
+
+.wrapper-main {
+  padding-top: 15px;
+  min-width: 345px;
+  margin: 20px;
+  min-height: 570px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 1px 1px 6px 0px rgba(130,130,130,0.75);
+  -moz-box-shadow: 1px 1px 6px 0px rgba(130,130,130,0.75);
+  box-shadow: 1px 1px 6px 0px rgba(130,130,130,0.75);
+}
+
+.btn-primary {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+
+.btn-primary.active.focus,
+.btn-primary.active:focus,
+.btn-primary.active:hover,
+.btn-primary:active.focus,
+.btn-primary:active:focus,
+.btn-primary:active:hover,
+.btn-primary.active,
+.btn-primary:active,
+.btn-primary.focus,
+.btn-primary:focus,
+.btn-primary:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.spacer-after {
+  padding-right: 5px;
+}
+
+.highlight {
+  background: #ffeb3b ;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    margin-left:0px;
+    margin-right:0px
+}
+
+/* Dials / Knobs */
+.dial {
+  width: 100%;
+  text-align: center;
+}
+.dial label {
+  display: block;
+}
+
+/* Table */
+table .progress {
+  margin-bottom: 0;
+}
+
+table .progress .progress-bar {
+  text-align: left;
+}
+
+table .progress .progress-bar span {
+  color: #ffffff;
+  margin-left: 6px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+table tr.dropdown-input td {
+  border-top: none;
+}
+
+/* Nav */
+.navbar-inverse .navbar-nav > li > a.btn-default {
+    padding: 7px;
+    margin: 7px;
+    background-color: #3e8f3e;
+    border-color: #3e8f3e;
+    color: #ffffff;
+}
+
+/* Page Header Row */
+.header-actions {
+  text-align: right;
+}
+
+.header-actions a,
+.header-actions button {
+  margin-top: 20px;
+}
+
+/* Footer */
+.footer p {
+  margin: 6px auto;
+  text-align: center;
+  width: 300px;
+}
+
+/* Login */
+
+.hero-signin,
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.hero-signin img {
+    display:block;
+    margin:auto;
+}
+
+/* Activity Feed */
+.list-activity-feed li {
+  margin-bottom: 10px;
+}
+
+.list-activity-feed p {
+  margin-bottom: 0;
+}
+
+.list-activity-feed small {
+
+}
+
+.activity-feed-user {
+  font-weight: bold;
+}
+
+.activity-feed-object {
+  font-weight: bold;
+}
+
+.activity-feed-time {
+  color: #BBBBBB;
+}
+
+/* Charting */
+#chart > svg { width: 100% !important; }
+
+/*Added by Pratap for various fixes*/
+#divContent {
+	font-family:'Times New Roman'!important; font-size:1em!important;
+}
+.dropdown {
+    width:100%
+}
+.k-tool-text {display:none
+}
+
+
+/* Kendo UI table */
+
+.k-grid-header:first-child th.k-header:first-child, thead.k-grid-header th.k-header:first-child, .k-rtl thead.k-grid-header th.k-header:last-child,
+.k-rtl .k-grid-header:first-child th.k-header:first-child, .k-rtl thead.k-grid-header th.k-header:first-child, thead.k-grid-header th.k-header:last-child {
+    border-radius: 0;
+}
+
+.k-grid-header th.k-header, .k-filter-row th {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+}
+
+.k-grid, .k-scheduler, .k-menu, .k-editor {
+    border: none;
+}
+
+.k-block, .k-header, .k-grid-header, .k-toolbar, .k-grouping-header, .k-pager-wrap, .k-button, .k-draghandle, .k-treemap-tile, html .km-pane-wrapper .k-header {
+    background-color: #FFFFFF;
+}
+
+.k-alt, .k-separator, .k-resource.k-alt, .k-pivot-layout>tbody>tr:first-child>td:first-child {
+    background-color: #FFFFFF;
+}
+
+.k-grid tr td {
+    border: none; 
+    border-top: 1px solid #ddd;
+}
+
+.k-pager-wrap {
+    border-color: #FFFFFF;
+    margin-top: 15px;
+}
+
+.k-widget, .k-button {
+    box-shadow: none;
+}
+
+.k-multiselect.k-header {
+    background-color: #FFFFFF;
+    height: 32px;
+    
+}
+
+
+

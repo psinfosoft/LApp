@@ -1,0 +1,76 @@
+﻿@model  LegalApp.Entity.EntitySubscriber
+@{
+    ViewBag.Title = "Login";
+    Html.EnableClientValidation();
+    ViewBag.BodyClass = "login-content";
+    Layout = "~/Views/Shared/_LoginMaster.cshtml";
+}
+
+
+@if (TempData["InvalidResult"] != null)
+{
+    <script type="text/javascript">
+        notify('@TempData["InvalidResult"].ToString()', '@(Convert.ToString((Helper.Enums.MessageType)(Convert.ToInt32(Helper.Enums.MessageType.danger))))');
+    </script>
+}
+
+@if (@TempData["Msg"] != null)
+{
+    <script type="text/javascript">
+        var dataMSg = '@TempData["Msg"].ToString()';
+        notify(dataMSg, '@(Convert.ToString((Helper.Enums.MessageType)(Convert.ToInt32(Helper.Enums.MessageType.success))))');
+    </script>
+}
+@if (TempData["ResetInvalidmsg"] != null)
+{
+    <script type="text/javascript">
+        notify('@TempData["ResetInvalidmsg"].ToString()', '@(Convert.ToString((Helper.Enums.MessageType)(Convert.ToInt32(Helper.Enums.MessageType.danger))))');
+    </script>
+}
+<div>
+    <div class="container">
+        @*<div class="hero-signin">
+            <img src="~/content/Images/logo.png" />
+        </div>*@
+        <div id="LoginContainer">
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @id = "Frm2", @class = "form-signin" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <h2 class="form-signin-heading">Please sign in</h2>
+                <div class="form-group">
+                    @Html.TextBoxFor(model => model.Email, new { MaxLength = 200, @class = "form-control", @placeholder = "Enter email", @autocomplete = "off",  @title = "Email", onkeypress = "javascript:return Evalidatescripttage(event)" })
+                    <small class="help-block">@Html.ValidationMessageFor(model => model.Email)</small>
+                </div>
+                <div class="form-group">
+                    @Html.PasswordFor(model => model.Password, new { MaxLength = 500, @class = "form-control", @placeholder = "Password", @title = "Password", @Name = "Password", onkeypress = "javascript:return Passwordscripttage(event)" })
+                    <small class="help-block">@Html.ValidationMessageFor(model => model.Password)</small>
+                </div>
+                <div class="form-group checkbox">
+                    <label>
+                        <input type="checkbox" onclick="fillRemember()" value="" id="ChkRemember" title="Remember me"> Remember me
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-lg btn-primary btn-block" value='Login' title='Login' name="commit">
+                    <input id="HdnRemember" name="HdnRemember" type="hidden" value="" />
+                </div>            
+            }
+        </div>
+       
+    </div>
+</div>
+<script type="text/javascript">
+    var ViewbagName = "";
+    $(document).ready(function () {
+        $('#EmailId').focus();      
+    });
+    function fillRemember() {
+    }
+    function setviewbagtitle(e) {       
+            $("#LoginContainer").css('display', 'block')
+            setTimeout(function () {
+                $('#EmailId').focus();
+            }, 20)     
+    }
+</script>

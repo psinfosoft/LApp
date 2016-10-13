@@ -1,0 +1,4 @@
+D:\Pratap Singh\Websites\LegalApp\DataEntities\bin\Debug\DataEntities.dll
+D:\Pratap Singh\Websites\LegalApp\DataEntities\bin\Debug\DataEntities.pdb
+D:\Pratap Singh\Websites\LegalApp\DataEntities\obj\Debug\DataEntities.dll
+D:\Pratap Singh\Websites\LegalApp\DataEntities\obj\Debug\DataEntities.pdb

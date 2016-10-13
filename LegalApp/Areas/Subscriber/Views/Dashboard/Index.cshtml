@@ -1,0 +1,69 @@
+﻿@using LegalApp.Common;
+    @{
+        ViewBag.Title = "index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        Int32 SubscriberId = Convert.ToInt32(UtilityClass.ReadCookie(Convert.ToInt32(Helper.Enums.CookiesIndex.LoginId)));
+        string EncryptedSubscriberId = Encryption.EncryptQueryString(SubscriberId.ToString());
+    }
+
+    <h1>Dashboard</h1>
+    <hr />
+
+    <div class="row" >
+        <div id="LawyerGrid" ></div>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: '@Url.Action("GetAllLawyersBySubscriberID", "Dashboard", new { SubscriberID = EncryptedSubscriberId })',
+                        dataType: "json",
+                    }
+                },
+                pageSize: 10
+            });
+            $("#LawyerGrid").kendoGrid({
+                columns: [{
+                    field: "Name",
+                    title: "Name"
+                },
+                {
+                    field: "Email",
+                    title: "Email"
+                },
+                {
+                    field: "AlternateEmail",
+                    title: "AlternateEmail"
+                },
+                {
+                    field: "Phone",
+                    title: "Phone"
+                },
+                {
+                    field: "AlternatePhone",
+                    title: "AlternatePhone"
+                },
+                {
+                    field: "State",
+                    title: "State"
+                },
+                {
+                    field: "City",
+                    title: "City"
+                },
+                {
+                    field: "Address",
+                    title: "Address"
+                },
+                {
+                    field: "IsActive",
+                    title: "IsActive"
+                }],
+                dataSource: dataSource,
+                scrollable: true,
+            });
+        });
+
+    </script>
