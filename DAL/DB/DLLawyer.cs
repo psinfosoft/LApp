@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.DB
+namespace DAL
 {
     public class DLLawyer
     {
-        public static IList<GetAllLawyersBySubscriberID_Result> GetAllLawyersBySubscriberID(long SubscriberID)
+        public static List<GetAllLawyersBySubscriberID_Result> GetAllLawyersBySubscriberID(long SubscriberID)
         {
             using (LegalTestEntities Ctx = new LegalTestEntities())
             {                
