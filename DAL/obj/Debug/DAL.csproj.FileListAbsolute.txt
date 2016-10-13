@@ -10,3 +10,15 @@ D:\Pratap Singh\Websites\LegalApp\DAL\bin\Debug\EntityFramework.SqlServer.xml
 D:\Pratap Singh\Websites\LegalApp\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\Pratap Singh\Websites\LegalApp\DAL\obj\Debug\DAL.dll
 D:\Pratap Singh\Websites\LegalApp\DAL\obj\Debug\DAL.pdb
+D:\Pratap Singh\Personal\LegalApp\DAL\bin\Debug\DAL.dll.config
+D:\Pratap Singh\Personal\LegalApp\DAL\bin\Debug\DAL.dll
+D:\Pratap Singh\Personal\LegalApp\DAL\bin\Debug\DAL.pdb
+D:\Pratap Singh\Personal\LegalApp\DAL\bin\Debug\AutoMapper.dll
+D:\Pratap Singh\Personal\LegalApp\DAL\bin\Debug\EntityFramework.dll
+D:\Pratap Singh\Personal\LegalApp\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Pratap Singh\Personal\LegalApp\DAL\bin\Debug\AutoMapper.xml
+D:\Pratap Singh\Personal\LegalApp\DAL\bin\Debug\EntityFramework.xml
+D:\Pratap Singh\Personal\LegalApp\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Pratap Singh\Personal\LegalApp\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Pratap Singh\Personal\LegalApp\DAL\obj\Debug\DAL.dll
+D:\Pratap Singh\Personal\LegalApp\DAL\obj\Debug\DAL.pdb
