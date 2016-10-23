@@ -157,7 +157,7 @@ table tr.dropdown-input td {
 	font-family:'Times New Roman'!important; font-size:1em!important;
 }
 .dropdown {
-    width:100%
+   /* width:100%*/
 }
 .k-tool-text {display:none
 }
